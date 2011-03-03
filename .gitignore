@@ -1,0 +1,6 @@
+.rvmrc
+*.gem
+.yardoc
+doc
+vendor
+
