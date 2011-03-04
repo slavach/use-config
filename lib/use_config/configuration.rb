@@ -7,7 +7,7 @@ require 'hash_access'
 module UseConfig
   include HashAccess
 
-  # UseConfig class plays two roles.
+  # UseConfig::Configuration class plays two roles.
   #
   # An instance of the class is a hash, a placeholder for configuration.
   # It contents could be loaded from a YAML file or could be populated
