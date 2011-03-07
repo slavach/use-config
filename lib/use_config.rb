@@ -9,7 +9,7 @@ module UseConfig
 
   # Extends the Object class with UseConfig::ClassMethods
   # When UseConfig::ObjectExtend included, all the UseConfig::ClassMethods
-  # methods
+  # methods been added to Object and all its derivatives.
   module ObjectExtend
     def self.included(base) # :nodoc:
       Object.extend ClassMethods
@@ -30,11 +30,13 @@ module UseConfig
         end
       end
 
+      # Generates class accessor.
       metaclass.instance_eval do
         attr_accessor name
       end
       self.send "#{name}=".to_sym, UseConfig::Configuration.add_conf(self, name, options, &block)
 
+      # Generates instance accessor.
       class_eval <<-EVAL
         def #{name}
           self.class.#{name}
