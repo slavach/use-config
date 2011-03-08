@@ -1,14 +1,9 @@
-GIT
-  remote: https://github.com/slavach/hash-access.git
-  revision: c567a4140eca59a05494854012f045bc4c87f6ac
-  specs:
-    hash-access (0.3.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
     BlueCloth (1.0.1)
     diff-lcs (1.1.2)
+    hash-access (0.2.1)
     rdoc (3.5.3)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
@@ -25,7 +20,7 @@ PLATFORMS
 
 DEPENDENCIES
   BlueCloth
-  hash-access!
+  hash-access
   rdoc
   rspec
   rspec-core

@@ -2,7 +2,7 @@
 
 source 'http://rubygems.org'
 
-gem 'hash-access', :git => 'https://github.com/slavach/hash-access.git'
+gem 'hash-access'
 
 group :development, :test do
   gem 'rspec-core'
