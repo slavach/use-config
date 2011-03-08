@@ -26,7 +26,7 @@ end
 
 desc "Push the gem to rubygems.org"
 task :push do
-  system "gem push use-config-#{UseConfig::VERSION}"
+  system "gem push use-config-#{UseConfig::VERSION}.gem"
 end
 
 desc "Generate documentation"
