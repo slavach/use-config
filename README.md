@@ -72,6 +72,6 @@ To invoke tests - run `rake spec` or simply `rake`.
 
 ## Author
 
-HashAccess has been written by Svetoslav Chernobay <slava@chernobay.info>.
+UseConfig has been written by Svetoslav Chernobay <slava@chernobay.info>.
 Feel free to contact him if you have any questions or comments.
 
