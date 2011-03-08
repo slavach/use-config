@@ -2,34 +2,23 @@
 
 Easy configuration solution for any Ruby class.
 
-UseConfig library allows a Ruby class to use configuration stored in a YAML
-file.
+[UseConfig](https://github.com/slavach/use-config) allows a Ruby class to use
+configuration stored in a YAML file.
 
 Configuration is loaded by a single line of code, like:
 
     use_config :conf
 
-Once being loaded, configuration values are accessible by calling to the
+Once been loaded, configuration values are accessible by calling to the
 corresponding methods:
 
     conf.project.name
 
 ## Installation
 
-The latest version from GitHub:
-
-    git clone https://github.com/slavach/use-config.git
-
-An older version from gem:
+UseConfig is available as the gem use-config.
 
     gem ins use-config
-
-## Testing
-
-In order to run tests, you have to install RSpec. It could be done as simple
-as `gem ins rspec`.
-
-To invoke tests - run `rake spec` or simply `rake`.
 
 ## Usage Example
 
@@ -65,10 +54,24 @@ Next, create a ruby program that uses the above configuration:
     print demo.conf.messages.welcome, "\n"
     print demo.conf.messages.lorem, "\n"
 
+## Development
+
+Clone the latest code from Github:
+
+    git clone git://github.com/slavach/use-config.git
+
+Install bundler:
+
+    gem install bundler
+
+Install required gems:
+
+    bundle install
+
+To invoke tests - run `rake spec` or simply `rake`.
+
 ## Author
 
 HashAccess has been written by Svetoslav Chernobay <slava@chernobay.info>.
 Feel free to contact him if you have any questions or comments.
-
-## Notes
 
