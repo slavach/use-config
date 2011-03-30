@@ -147,8 +147,9 @@ module UseConfig
     #
     # Options:
     #
-    # * +:empty: - Create empty object, don't read configuration from file.
-    # * No other options yet.
+    # * +:empty:+ - Create empty object, don't read configuration from file.
+    # * +:file:+ - Load configuration from given file. Use full name.
+    # * +:path_insert:+ - Insert the value into the config files search path.
     #
     # Notes:
     #
@@ -166,13 +167,24 @@ module UseConfig
       end
       instance_properties.name = name.to_s
       instance_properties.used_by = []
+      if options[:path_insert]
+        if options[:path_insert].is_a? Array
+          options[:path_insert].reverse.each do |dir|
+            instance_properties['path'].unshift(dir)
+          end
+        else
+          instance_properties['path'].unshift(options[:path_insert])
+        end
+      end
       if options[:empty]
         instance_properties.use_file = false
       end
-      if instance_properties.use_file and instance_properties.file.nil?
-        config_file_find
+      if instance_properties.use_file
         if instance_properties.file.nil?
-          raise "Configuration file not found"
+          config_file_find
+          if instance_properties.file.nil?
+            raise "Configuration file not found"
+          end
         end
         load_configuration
       end

@@ -42,8 +42,16 @@ describe UseConfig::Configuration, "instance public interface" do
       context "when option :file given" do
         it "loads configuration from file" do
           c = UseConfig::Configuration.new :the_first_conf,
-            :file => 'first_conf.yaml'
-          c.core.name.should = 'first_conf'
+            :file => "spec/config/first_conf.yaml"
+          c.core.name.should == 'first_conf'
+        end
+      end
+
+      context "when option :path_insert given" do
+        it "loads configuration from file from given path" do
+          c = UseConfig::Configuration.new :config,
+            :path_insert => "spec/config_insert"
+          c.confname.should == 'config_insert_conf'
         end
       end
     end

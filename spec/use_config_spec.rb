@@ -9,7 +9,7 @@ describe UseConfig do
   before :each do
     UseConfig::Configuration.reset!
     UseConfig::Configuration.configure do |c|
-      c.path << "#{File.dirname(__FILE__)}/config"
+      c.path << "spec/config"
     end
   end
 
@@ -30,6 +30,11 @@ describe UseConfig do
     it "loads configuration" do
       Sample.use_config :first_conf
       Sample.first_conf.core.name.should == 'first_conf'
+    end
+
+    it "loads configuration from :path_insert directory" do
+      Sample.use_config :config, :path_insert => 'spec/config_insert'
+      Sample.config.confname.should == 'config_insert_conf'
     end
   end
 
